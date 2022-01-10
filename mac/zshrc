@@ -1,0 +1,95 @@
+zmodload zsh/zprof
+
+# zsh options
+setopt GLOB_COMPLETE
+setopt AUTO_CD
+export SAVEHIST=5000
+export HISTSIZE=2000
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt CORRECT
+setopt CORRECT_ALL
+
+# Use GNU dircolors for ls -- specific to MacOS
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.toolbox/bin:$PATH"
+export PATH="$PATH:$HOME/bin/flutter/bin"
+
+export LANG=en_US.UTF-8
+
+# AWS CLI environment configuration
+AWS_CLI_AUTO_PROMPT='on'
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='code'
+fi
+
+#alias brew='env PATH=${PATH//$(pyenv root)\/shims:/} brew'
+alias ls="ls --color=always"
+alias grep="grep --color=always"
+alias egrep="egrep --color=always"
+alias brewup="brew update && brew upgrade && brew cleanup"
+alias -s md="code"
+alias ec="$EDITOR $HOME/.zshrc"
+#alias mylinux="ssh -i $HOME/sshkeys/jorara-hkkp.pem ec2-user@18.167.43.199"
+alias isengard='open https://isengard.amazon.com'
+alias mygist='open https://gist.github.com/joben'
+#alias mjolnir="$HOME/repo/scripts/awscli/runec2.sh $HOME/repo/scripts/awscli/windowsbastionparams.json"
+alias noteglobe="cd $HOME/Documents/accounts/Globe/_notes_"
+alias vpnstatus="/opt/cisco/anyconnect/bin/vpn status"
+alias vpnoff="/opt/cisco/anyconnect/bin/vpn disconnect"
+alias vpn="vpn-onetouch"
+
+
+if [ "$(command -v exa)" ]; then
+   unalias -m 'll'
+   unalias -m 'l'
+   unalias -m 'la'
+   unalias -m 'ls'
+   alias ls='exa -G --color auto -s type'
+   alias ll='exa -lh --color auto -s type'
+   alias la='exa -lh --color auto -a -s type'
+fi
+
+if [ "$(command -v bat)" ]; then
+   unalias -m 'cat'
+   alias cat='bat -pp --theme="Nord"'
+fi
+
+
+MODE_INDICATOR_VIINS='%F{15}<%F{8}INSERT<%f'
+MODE_INDICATOR_VICMD='%F{10}<%F{2}NORMAL<%f'
+MODE_INDICATOR_REPLACE='%F{9}<%F{1}REPLACE<%f'
+MODE_INDICATOR_SEARCH='%F{13}<%F{5}SEARCH<%f'
+MODE_INDICATOR_VISUAL='%F{12}<%F{4}VISUAL<%f'
+MODE_INDICATOR_VLINE='%F{12}<%F{4}V-LINE<%f'
+
+source "${HOME}/.zgen/zgen.zsh"
+zgen load zdharma/fast-syntax-highlighting
+zgen load  softmoth/zsh-vim-mode
+
+fpath=( ~/.zfunc $fpath )
+autoload -Uz ~/.zfunc/**/*
+
+bindkey -rpM viins '^[^['
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
+# eval "$(rbenv init -)"
+eval "$(starship init zsh)"
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"

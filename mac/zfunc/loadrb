@@ -1,0 +1,4 @@
+
+loadrb() {
+   eval "$(rbenv init -)"
+}

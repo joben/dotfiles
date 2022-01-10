@@ -1,0 +1,8 @@
+
+updateawscli() {
+        cd $HOME/repo/scripts/helper/awscli
+	curl https://awscli.amazonaws.com/AWSCLIV2.pkg -o AWSCLIV2.pkg
+	installer -pkg AWSCLIV2.pkg -target CurrentUserHomeDirectory -applyChoiceChangesXML choices.xml
+}
+
+updateawscli

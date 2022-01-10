@@ -1,0 +1,9 @@
+#autoload
+
+k() {
+    eval "$(ssh-agent -s)"
+    ssh-add -K ~/.ssh/joben_github
+    ssh-add -K ~/.ssh/jorara-gitlab
+}
+
+k

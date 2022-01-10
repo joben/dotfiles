@@ -1,0 +1,6 @@
+
+loadfnm() {
+   eval "$(fnm env)"
+}
+
+loadfnm

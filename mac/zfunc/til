@@ -1,0 +1,7 @@
+#autoload
+
+til() {
+   curl cheat.sh/"$1"
+}
+
+til "$0"
