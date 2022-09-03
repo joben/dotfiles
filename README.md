@@ -80,7 +80,7 @@ b. Magnet
 a. zshrc
 ```shell
 cd $HOME
-cat << EOF > .zshrc
+cat << 'EOF' > .zshrc
 
 # zsh options
 setopt GLOB_COMPLETE
