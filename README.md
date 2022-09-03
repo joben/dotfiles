@@ -135,7 +135,7 @@ a. starship
 
 ```shell
 mkdir -p ~/.config && cd ~/.config
-cat << EOF > starship.toml
+cat << 'EOF' > starship.toml
 add_newline = false
 
 [cmd_duration]
