@@ -4,7 +4,12 @@
 3. development : go node
 
 https://wilsonmar.github.io/zsh/
+
 https://sourabhbajaj.com/mac-setup/iTerm/fzf.html
+
+https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-environment-d99
+
+
 
 # mac setup
 
