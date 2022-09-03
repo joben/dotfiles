@@ -39,6 +39,29 @@ a. starship
 ```shell
 mkdir -p ~/.config && cd ~/.config
 cat << EOF > starship.toml
+add_newline = false
+
+[cmd_duration]
+min_time = 500
+format = "[$duration](bold yellow)"
+
+[character]
+success_symbol = "→"
+format = "$symbol "
+
+[aws]
+style = "bold orange"
+format = "on [$symbol($profile )\($region\)(\[$duration\]) ]($style)"
+
+[aws.region_aliases]
+ap-southeast-1 = "SG"
+us-east-1 = "VA"
+
+[python]
+symbol = "🐍 "
+format = "via [${sumbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)"
+pyenv_version_name = true
+
 
 
 
