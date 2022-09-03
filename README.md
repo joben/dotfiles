@@ -156,7 +156,7 @@ us-east-1 = "VA"
 
 [python]
 symbol = "🐍 "
-format = "via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)"
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = true
 EOF
 ```
