@@ -2,7 +2,8 @@
 
 k() {
     eval "$(ssh-agent -s)"
-    ssh-add -K ~/.ssh/joben_github
+    ssh-add -K ~/.ssh/jorara-gitlab-ed25519
+    ssh-add -K ~/.ssh/joben-github-ed25519
     ssh-add -K ~/.ssh/jorara-gitlab
 }
 

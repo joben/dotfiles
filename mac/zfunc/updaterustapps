@@ -4,7 +4,6 @@ updaterustapps() {
 	cargo install bat
 	cargo install exa
 	cargo install fnm
-	cargo install starship
 	cargo install viu
 }
 
