@@ -86,6 +86,7 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
 1. Restore configuration
 
    a. zshrc
+   
          ```shell
          cd $HOME
          cat << 'EOF' > .zshrc
