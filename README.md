@@ -86,86 +86,86 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
 1. Restore configuration
 
    a. zshrc
-      ```shell
-      cd $HOME
-      cat << 'EOF' > .zshrc
+         ```shell
+         cd $HOME
+         cat << 'EOF' > .zshrc
 
-      # zsh options
-      setopt GLOB_COMPLETE
-      setopt AUTO_CD
-      export SAVEHIST=5000
-      export HISTSIZE=2000
-      setopt EXTENDED_HISTORY
-      setopt SHARE_HISTORY
-      setopt APPEND_HISTORY
-      setopt INC_APPEND_HISTORY
-      setopt HIST_EXPIRE_DUPS_FIRST
-      setopt HIST_IGNORE_DUPS
-      setopt HIST_FIND_NO_DUPS
-      setopt HIST_REDUCE_BLANKS
-      setopt CORRECT
-      setopt CORRECT_ALL
+         # zsh options
+         setopt GLOB_COMPLETE
+         setopt AUTO_CD
+         export SAVEHIST=5000
+         export HISTSIZE=2000
+         setopt EXTENDED_HISTORY
+         setopt SHARE_HISTORY
+         setopt APPEND_HISTORY
+         setopt INC_APPEND_HISTORY
+         setopt HIST_EXPIRE_DUPS_FIRST
+         setopt HIST_IGNORE_DUPS
+         setopt HIST_FIND_NO_DUPS
+         setopt HIST_REDUCE_BLANKS
+         setopt CORRECT
+         setopt CORRECT_ALL
 
-      # Use GNU dircolors for ls -- specific to MacOS
-      PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-      MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+         # Use GNU dircolors for ls -- specific to MacOS
+         PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+         MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-      export LANG=en_US.UTF-8
+         export LANG=en_US.UTF-8
 
-      if type brew &>/dev/null; then
-        FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+         if type brew &>/dev/null; then
+           FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-        autoload -Uz compinit
-        compinit
-      fi
+           autoload -Uz compinit
+           compinit
+         fi
 
-      if [ "$(command -v exa)" ]; then
-         unalias -m 'll'
-         unalias -m 'l'
-         unalias -m 'la'
-         unalias -m 'ls'
-         alias ls='exa -G --color auto -s type'
-         alias ll='exa -lh --color auto -s type'
-         alias la='exa -lh --color auto -a -s type'
-      fi
+         if [ "$(command -v exa)" ]; then
+            unalias -m 'll'
+            unalias -m 'l'
+            unalias -m 'la'
+            unalias -m 'ls'
+            alias ls='exa -G --color auto -s type'
+            alias ll='exa -lh --color auto -s type'
+            alias la='exa -lh --color auto -a -s type'
+         fi
 
-      if [ "$(command -v bat)" ]; then
-         unalias -m 'cat'
-         alias cat='bat -pp --theme="Nord"'
-      fi
+         if [ "$(command -v bat)" ]; then
+            unalias -m 'cat'
+            alias cat='bat -pp --theme="Nord"'
+         fi
 
-      # Must be at end of file
-      eval "$(starship init zsh)"
-      EOF
-      ```
+         # Must be at end of file
+         eval "$(starship init zsh)"
+         EOF
+         ```
 
    a. starship.toml
 
-      ```shell
-      mkdir -p ~/.config && cd ~/.config
-      cat << 'EOF' > starship.toml
-      add_newline = false
+         ```shell
+         mkdir -p ~/.config && cd ~/.config
+         cat << 'EOF' > starship.toml
+         add_newline = false
 
-      [cmd_duration]
-      min_time = 500
-      format = "[$duration](bold yellow)"
+         [cmd_duration]
+         min_time = 500
+         format = "[$duration](bold yellow)"
 
-      [character]
-      success_symbol = "→"
-      format = "$symbol "
+         [character]
+         success_symbol = "→"
+         format = "$symbol "
 
-      [aws]
-      style = "bold orange"
-      format = "on [$symbol($profile )\($region\)(\[$duration\]) ]($style)"
+         [aws]
+         style = "bold orange"
+         format = "on [$symbol($profile )\($region\)(\[$duration\]) ]($style)"
 
-      [aws.region_aliases]
-      ap-southeast-1 = "SG"
-      us-east-1 = "VA"
+         [aws.region_aliases]
+         ap-southeast-1 = "SG"
+         us-east-1 = "VA"
 
-      [python]
-      symbol = "🐍 "
-      format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-      pyenv_version_name = true
-      EOF
-      ```
+         [python]
+         symbol = "🐍 "
+         format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+         pyenv_version_name = true
+         EOF
+         ```
 
