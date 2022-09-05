@@ -88,6 +88,7 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
          
          ```
          cd $HOME
+         
          cat << 'EOF' > .zshrc
 
          # zsh options
@@ -144,6 +145,7 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
          
          ```
          mkdir -p ~/.config && cd ~/.config
+         
          cat << 'EOF' > starship.toml
          add_newline = false
 
