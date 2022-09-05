@@ -26,7 +26,6 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
 
    ```
    brew install zsh zsh-completions
-
    ```
 
 1. Install iterm2
@@ -88,6 +87,7 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
    a. zshrc
    
          ```shell
+         
          cd $HOME
          cat << 'EOF' > .zshrc
 
@@ -138,11 +138,13 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
          # Must be at end of file
          eval "$(starship init zsh)"
          EOF
+         
          ```
 
    a. starship.toml
 
          ```shell
+         
          mkdir -p ~/.config && cd ~/.config
          cat << 'EOF' > starship.toml
          add_newline = false
@@ -168,5 +170,6 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
          format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
          pyenv_version_name = true
          EOF
+         
          ```
 
