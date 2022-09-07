@@ -1,7 +1,3 @@
-# dotfiles for my wsl and linux environments
-1. zsh & oh-my-zsh
-2. tools : git powershell docker 
-3. development : go node
 
 https://wilsonmar.github.io/zsh/
 
@@ -63,6 +59,9 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
     bat \
     tree \
 
+   # version managers
+   brew install \
+      fnm
    ```
 
 1. install scripts
@@ -86,7 +85,7 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
 
    a. zshrc
          
-         ```
+      ```shell
          cd $HOME
          
          cat << 'EOF' > .zshrc
@@ -138,12 +137,13 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
          # Must be at end of file
          eval "$(starship init zsh)"
          EOF
-         ```
+      ```
 
    a. starship.toml
 
          
-         ```
+      ```shell
+      
          mkdir -p ~/.config && cd ~/.config
          
          cat << 'EOF' > starship.toml
@@ -170,5 +170,5 @@ https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-enviro
          format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
          pyenv_version_name = true
          EOF
-         ```
+      ```
 
