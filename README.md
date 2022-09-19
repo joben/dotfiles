@@ -5,7 +5,9 @@ https://sourabhbajaj.com/mac-setup/iTerm/fzf.html
 
 https://dev.to/snaka/10-things-i-always-setup-in-git-when-i-prepare-a-new-environment-d99
 
+https://direnv.net
 
+#asdf for node, python version manager
 
 # mac setup
 
