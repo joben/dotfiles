@@ -9,6 +9,8 @@ https://direnv.net
 
 #asdf for node, python version manager
 
+https://blog.mikecordell.com/2021/12/18/better-project-environment-management-with-direnv-and-asdf/
+
 # mac setup
 
 1. Install Homebrew
