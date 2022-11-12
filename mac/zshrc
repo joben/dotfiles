@@ -16,15 +16,8 @@ setopt HIST_REDUCE_BLANKS
 setopt CORRECT
 setopt CORRECT_ALL
 
-# Use GNU dircolors for ls -- specific to MacOS
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.toolbox/bin:$PATH"
+
 #export PATH="$PATH:$HOME/bin/flutter/bin"
 
 export LANG=en_US.UTF-8
@@ -49,14 +42,7 @@ alias egrep="egrep --color=always"
 alias brewup="brew update && brew upgrade && brew cleanup"
 alias -s md="code"
 alias ec="$EDITOR $HOME/.zshrc"
-#alias mylinux="ssh -i $HOME/sshkeys/jorara-hkkp.pem ec2-user@18.167.43.199"
-alias isengard='open https://isengard.amazon.com'
-alias mygist='open https://gist.github.com/joben'
-#alias mjolnir="$HOME/repo/scripts/awscli/runec2.sh $HOME/repo/scripts/awscli/windowsbastionparams.json"
-#alias noteglobe="cd $HOME/Documents/accounts/Globe/_notes_"
-alias vpnstatus="/opt/cisco/anyconnect/bin/vpn status"
-alias vpnoff="/opt/cisco/anyconnect/bin/vpn disconnect"
-alias vpn="vpn-onetouch"
+
 
 if [ "$(command -v exa)" ]; then
    unalias -m 'll'
@@ -81,8 +67,6 @@ MODE_INDICATOR_VISUAL='%F{12}<%F{4}VISUAL<%f'
 MODE_INDICATOR_VLINE='%F{12}<%F{4}V-LINE<%f'
 
 source "${HOME}/.zgen/zgen.zsh"
-zgen load zdharma/fast-syntax-highlighting
-zgen load  softmoth/zsh-vim-mode
 
 fpath=( ~/.zfunc $fpath )
 autoload -Uz ~/.zfunc/**/*
@@ -91,21 +75,7 @@ bindkey -rpM viins '^[^['
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
-#complete -o nospace -C /usr/local/bin/terraform terraform
-
 export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
-# eval "$(rbenv init -)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(command pyenv init --path)"
-eval "$(command pyenv init -)"
-eval "$(command pyenv virtualenv-init -)"
 
-# completions for pipx
-#autoload -U bashcompinit
-#bashcompinit
-
-autoload -U +X bashcompinit && bashcompinit
-eval "$(register-python-argcomplete pipx)"
 eval "$(starship init zsh)"
